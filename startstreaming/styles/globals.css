@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+@media (max-width: 1000px) {
+
+  p {
+    font-size: 10px;
+  }
+  
+  h2 {
+    font-size: 20px;
+  }
+
+
+  .movieDetails {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    max-width: 45em;
+    margin: 0em;
+    margin-top: 3em;
+    padding: 1em;
+    border: 4px;
+    border-color: rgb(86, 113, 140);
+    border-style: groove;
+  }
+
+  .movieInfo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mainData {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px !important;
+    text-align: left !important;
+    margin-bottom: 1em;
+  }
+
+  .metaData {
+    display: flex;
+    flex-direction: row;
+    text-align: left !important;
+    font-size: 25px;
+  }
+
+  .genre {
+    font-size: 10px;
+    background-color:rgb(229, 234, 234);
+    height: max-content;
+    width: 50px;
+    text-align: center;
+    border-radius: 1em;
+    border-color: rgb(29, 27, 27);
+    border-style: groove;
+  }
+
+  .genreList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 0.5fr));
+  padding-right: 2em;
+  margin-bottom: 1em;
+  margin-top: 1.5em;
+  border-color: black;
+  border-style: groove;
+  border: 1em;
+  }
+
+  .mobileImg {
+    width: auto;
+    height: 18em;
+  }
+
+}
+
+
+* {
+  margin-top: 0%;
+  margin-left: 0%;
+  margin-right: 0%;
+  font-family: 'Oswald' ;
+}
+
+:root {
+  background-color: rgb(137, 174, 170);
+ 
+}
+
+h1 {
+  font-size: 45px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.pLink:hover {
+  background-color: rgb(204, 202, 202);
+}
+
+.imgLink:hover {
+  opacity: 80%;
+}
+
+img {
+  border: 2px;
+  border-color: rgb(4, 36, 36);
+  border-style: groove;
+}
+
+.header {
+  background-color: rgb(220, 221, 222);
+  padding-top: 2em;
+  padding-bottom: .1em;
+}
+
+.movieList {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.listSection {
+  margin-top: 2em;
+}
+
+.listName {
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 2px;
+  border-color: rgb(154, 154, 154);
+  border-style: groove;
+  margin-bottom: 0%;
+}
+
+.listCard {
+  padding-left: 3.3em;
+  padding-right: 3em;
+}
+
+.movieCard {
+  width: 12.5em;
+  height: 22em;
+  padding: 1%;
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-bottom: 1em;
+}
+
+.imgList {
+  width: auto;
+  max-width: 12em;
+  height: 300px;
+}
+
+.movieInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailsCard {
+  display: flex;
+  flex-direction: column;
+
+}
+
+@media (min-width: 1000px) {
+
+  h2 {
+    font-size: 35px;
+    text-align: left;
+    padding-bottom: 0%;
+    margin-bottom: 0%;
+  }
+  
+  p {
+    font-size: 16px;
+    padding-right: 3em;
+    text-align: left;
+    color: rgb(61, 61, 57);
+  }
+
+  .genreList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 0.5fr));
+    padding-right: 3em;
+    margin-bottom: 2em;
+    margin-top: 2em;
+    border-color: black;
+    border-style: groove;
+    border: 1em;
+  }
+  
+  .genre {
+    font-size: 18px;
+    background-color:rgb(229, 234, 234);
+    height: max-content;
+    width: 100px;
+    text-align: center;
+    border-radius: 1em;
+    border-color: black;
+    border-style: groove;
+  }
+  
+  .mainData {
+    display: flex;
+    flex-direction: column;
+    font-size: 23px;
+    text-align: left !important;
+    margin-bottom: 1em;
+  }
+  
+  .metaData {
+    display: flex;
+    flex-direction: row;
+    text-align: left !important;
+    font-size: 30px;
+  }
+  
+  .movieDetails {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    margin: 10em;
+    margin-top: 3em;
+    padding: 1em;
+    border: 4px;
+    border-color: rgb(127, 128, 129);
+    border-style: groove;
+  }
+}
