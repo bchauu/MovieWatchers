@@ -6,7 +6,7 @@ import { ListCard } from '@/card/ListCard';
 
 
 
-function MoviePage(props) {
+function MoviePage() {
     const [popular, setPopular] = useState([]);
     const [popularPage, setPopularPage] = useState(1);
     const [upcomingPage, setUpcomingPage] = useState(1);
@@ -15,9 +15,8 @@ function MoviePage(props) {
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=3cda0804d7e6fb92273c090b8e4e1f22&language=en-US&page=${popularPage}`) 
             .then(res => res.json())
-            // .then(res => res.filter(original_language == 'en'))
             .then(res => setPopular([...res.results]));
-    },[popular])
+    },[popular]);
 
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=3cda0804d7e6fb92273c090b8e4e1f22&language=en-US&page=${upcomingPage}`) //upcoming
@@ -26,7 +25,7 @@ function MoviePage(props) {
     }, [upcoming]);
 
     const popularPageChange = (event, value) => {
-        setPopularPage(value)
+        setPopularPage(value);
     }
 
     const upcomingPageChange = (event, value) => {
@@ -39,7 +38,7 @@ function MoviePage(props) {
                 <div className='listSection'>
                     <div className='listName'>
 
-                        <h2>Upcoming Movies</h2>
+                        <h2>Latest Movies</h2>
                     </div>
                     <div className='pagination'>
                         <Pagination count={10} color="primary" page={upcomingPage} onChange={upcomingPageChange}/>

@@ -1,21 +1,31 @@
 import { useRouter } from "next/router";
-import Grid from "@mui/material";
+import { useEffect, useState } from "react";
 import { Rating } from "@mui/material";
 import Header from "@/components/Header";
 import { Fragment } from "react";
-import { DetailsCard } from "@/card/DetailsCard";
 import { MovieInfoCard } from "@/card/MovieInfoCard";
 
 
 
 function Details() {
 
+    const [haveFetched, setHaveFetched] = useState(false);
+    const [genres, setGenre] = useState([]);
+    const [USDateFormat, setUSDateFormat] = useState('');
+
     const router = useRouter();
-    console.log(router.query)
     const details = router.query;
-    const genresList = router.query.genres.split(',')
-    const genres = genresList.slice(0, genresList.length - 1);
-    console.log(genres)
+    
+ 
+    useEffect(() => {
+        if (details != undefined) {
+            const genresList = details.genres.split(',');
+            setGenre([...genresList.slice(0, genresList.length - 1)]);
+            setUSDateFormat(transformDate(details.date));
+            setHaveFetched(true);
+        }
+
+    }, [])
 
     const visualScore = (score) => {
         return score/2; 
@@ -29,15 +39,11 @@ function Details() {
 
     }
 
-    const today = new Date();
-
-    const USDateFormat = transformDate(details.date);
-
     const url = 'https://image.tmdb.org/t/p/w300/';
 
     return (
-        <Fragment>
-            <Header></Header>
+    <Fragment>
+        <Header></Header>
         <div className="movieDetails">
             <img className="mobileImg" src={url+details.poster}></img>
             <MovieInfoCard>
@@ -49,16 +55,19 @@ function Details() {
                     <Rating name="half-rating-read" defaultValue={score} precision={0.25} readOnly />
                     <p>{`${score}/5`}</p>
                 </div>
-                <div className="genreList">
+                {haveFetched
+                    ? <div className="genreList">
                     {genres.map(genre => (
                         <h2 className="genre">{genre}</h2>
                     ))
                     }
-                </div>
+                     </div>
+                    : <div></div>
+                }
                 <p>{details.desc}</p>
             </MovieInfoCard>
         </div>
-        </Fragment>
+    </Fragment>
     )
 }
 

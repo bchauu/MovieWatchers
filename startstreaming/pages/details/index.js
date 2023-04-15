@@ -3,10 +3,6 @@ import { Fragment } from "react";
 
 
 function Details() {
-
-    // const router = useRouter();
-    // console.log(router.query)
-
     return (
         <Fragment>
             <Header></Header>

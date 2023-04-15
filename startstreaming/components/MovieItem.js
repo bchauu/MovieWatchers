@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { useEffect } from "react";
 import { MovieCard } from "@/card/MovieCard";
 
 function MovieItem(props) {
@@ -36,23 +35,9 @@ function MovieItem(props) {
         }
     })
 
-    // let title = movie.title;
-    // const shortenTitle = (title) => {
-    //     if (title.length > 15) {
-    //         title = title.slice(0, 15);
-    //         title +='...'
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     // shortenTitle(title);
-    //     // console.log(movie.title.slice(0, 10))
-    // }, [props.page])
-
     return (
         <div className="movieList">
             <MovieCard>
-            {/* <img className="imgList" src={url+movie.poster_path}></img> */}
             <Link href={{
                 pathname: `/details/${id}`,
                 query: { title: movie.title,
@@ -62,7 +47,7 @@ function MovieItem(props) {
                          score: movie.vote_average,
                          genres: genreStr,
                          date: movie.release_date
-                     }
+                        }
             }}>
                 <img className="imgLink" src={url+movie.poster_path}></img>
                 <p className="pLink">{movie.title}</p>
