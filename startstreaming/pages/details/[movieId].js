@@ -57,8 +57,8 @@ function Details() {
                 </div>
                 {haveFetched
                     ? <div className="genreList">
-                    {genres.map(genre => (
-                        <h2 className="genre">{genre}</h2>
+                    {genres.map((genre, index) => (
+                        <h2 className="genre" key={index}>{genre}</h2>
                     ))
                     }
                      </div>

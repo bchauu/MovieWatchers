@@ -10,7 +10,7 @@ function Movie(props) {
         <div>
             <Grid container spacing={1} justifyContent='center' gap={3}>
             {movies.map(movie => (
-                <MovieItem movie={movie} page={page}></MovieItem>
+                <MovieItem movie={movie} page={page} key={movie.id}></MovieItem>
             ))
             }
             </Grid>
